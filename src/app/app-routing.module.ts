@@ -27,10 +27,7 @@ const routes: Routes = [
     path: 'parametros',
     loadChildren: () => import('./modulos/parametrizacion/parametrizacion.module').then(m => m.ParametrizacionModule)
   },
-  {
-    path: 'reporte',
-    loadChildren: () => import('./modulos/reporte/reporte.module').then(m => m.ReporteModule)
-  },
+  
   { 
     path: '**', 
     component: Error404Component
