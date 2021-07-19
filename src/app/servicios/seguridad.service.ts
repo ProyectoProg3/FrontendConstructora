@@ -57,4 +57,10 @@ export class SeguridadService {
       return true; 
     }
   }
+
+  RemoverLocalStorage() {
+    let datos = localStorage.removeItem("session-data");
+    this.RefrescarDatosSesion(new UsuarioModelo());
+  }
+
 }
