@@ -26,7 +26,8 @@ import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,10 @@ import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cl
   ],
   imports: [
     CommonModule,
-    ParametrizacionRoutingModule
+    ParametrizacionRoutingModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametrizacionModule { }
