@@ -30,8 +30,16 @@
                 <label class="active" for="fechaNacimiento">Fecha de Nacimiento</label>
             </div>
             <div class="input-field col s12">
-                <input formControlName="ciudadId" id="ciudadId" type="text" class="validate">
-                <label class="active" for="ciudadId">Ciudad</label>
+                <select formControlName="paisId" (change)="cargarCiudadesPorPais()">
+                  <option *ngFor="let p of listaPaises" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Pais</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="ciudadId" >
+                  <option *ngFor="let p of listaCiudades" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Ciudad</label>
             </div>
             <div class="input-field col s12">
                 <input formControlName="direccion" id="direcion" type="text" class="validate">

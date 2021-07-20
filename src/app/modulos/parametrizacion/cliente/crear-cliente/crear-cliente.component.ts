@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CiudadModelo } from 'src/app/modelos/ciudad.modelo';
 import { ClienteModelo } from 'src/app/modelos/cliente.modelo';
+import { PaisModelo } from 'src/app/modelos/pais.modelo';
+import { CiudadService } from 'src/app/servicios/ciudad.service';
 import { ClienteService } from 'src/app/servicios/cliente.service';
+import { PaisService } from 'src/app/servicios/pais.service';
+
+
+declare var iniciarSelect: any;
 
 @Component({
   selector: 'app-crear-cliente',
@@ -11,11 +18,16 @@ import { ClienteService } from 'src/app/servicios/cliente.service';
 })
 export class CrearClienteComponent implements OnInit {
 
+  listaPaises: PaisModelo[] = []
+  listaCiudades: CiudadModelo[] = []
+
   fgValidador: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder,
     private servicio: ClienteService,
-    private router: Router) {
+    private router: Router,
+    private servicioPaises: PaisService,
+    private servicioCiudades: CiudadService) {
 
   }
 
@@ -29,13 +41,38 @@ export class CrearClienteComponent implements OnInit {
       numCelular: ['', [Validators.required]],
       fotografia: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
-      ciudadId: ['', [Validators.required]],
+      paisId: ['', []],
+      ciudadId: ['', []],
       direccion: ['', [Validators.required]],
     });
   }
 
   ngOnInit(): void {
     this.ConstruirFormulario();
+    this.cargarPaises()
+  }
+
+  cargarPaises(){
+    this.servicioPaises.ListarRegistros().subscribe(
+      (datos) => {
+        this.listaPaises= datos;
+        setTimeout(() => {
+          iniciarSelect()
+        }, 500);
+      }
+    )
+  }
+
+  cargarCiudadesPorPais(){
+    this.servicioCiudades.BuscarRegistroPorIdPais(this.fgValidador.controls.paisId.value).subscribe(
+      (datos) => {
+        console.log(datos)
+        this.listaCiudades= datos;
+        setTimeout(() => {
+          iniciarSelect()
+        }, 500);
+      }
+    )
   }
 
   get ObtenerFgValidador() {
