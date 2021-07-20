@@ -1,0 +1,24 @@
+.tituloLista{
+color: white
+
+}
+
+.sub {
+    background-color: #BF0000;
+    border-radius: black;
+    border-color: black;
+    text-align: center;
+}
+table {
+    border:  2px solid;
+    opacity: inherit;
+  }
+
+#agregar{
+    margin:2%;
+    
+}
+
+th{
+    text-align: center;
+}

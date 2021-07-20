@@ -23,6 +23,7 @@ export class CrearClienteComponent implements OnInit {
     this.fgValidador = this.fb.group({
       id: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
+      documento: ['', [Validators.required]],
       apellidos: ['', [Validators.required]],
       correo: ['', [Validators.required]],
       telefono: ['', [Validators.required]],
@@ -51,6 +52,8 @@ export class CrearClienteComponent implements OnInit {
     let fnac = this.ObtenerFgValidador.fechaNacimiento.value;
     let ciudad = this.ObtenerFgValidador.ciudad.value;
     let dir = this.ObtenerFgValidador.direccion.value;
+    let documento= this.ObtenerFgValidador.documento.value;
+   
 
     let modelo: ClienteModelo = new ClienteModelo();
 
@@ -61,8 +64,10 @@ export class CrearClienteComponent implements OnInit {
     modelo.telefono = tel;
     modelo.fotografia = foto;
     modelo.fechaNacimiento = fnac;
-    modelo.ciudadId = ciudad;
+    modelo.ciudadId = parseInt(ciudad);
     modelo.direccion = dir;
+    modelo.documento= documento;
+
     this.servicio.AlmacenarRegistro(modelo).subscribe(
       (datos) =>{
         alert("Registro almacenado correctamente.");

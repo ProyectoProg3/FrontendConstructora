@@ -1,72 +1,72 @@
 <br />
-<a class="waves-effect waves-light btn" routerLink="/parametros/crear-cliente"><i
+<a id="agregar" class="waves-effect waves-light btn" routerLink="/parametros/crear-cliente"><i
         class="material-icons left">add</i>Agregar</a>
 
 <table class="table responsive-table">
-    <thead>
-        <tr>
-            <th>
+    <thead >
+        <tr class="tituloLista">
+            <th class="sub">
                 Id
             </th>
-            <th>
+            <th class="sub">
                 Documento
             </th>
-            <th>
+            <th class="sub">
                 Nombre
             </th>
-            <th>
+            <th class="sub">
                 Apellidos
             </th>
-            <th>
+            <th class="sub">
                 Correo
             </th>
-            <th>
+            <th class="sub"> 
                 Telefono
             </th>
-            <th>
+            <th class="sub">
                 Fotografia
-            </th>
-            <th>
+            </th >
+            <th class="sub">
                 Fecha de Nacimiento
             </th>
-            <th>
+            <th class="sub">
                 Ciudad
             </th>
-            <th>
+            <th class="sub">
                 Direccion
             </th>
-            <th>
+            <th class="sub">
                 Acciones
             </th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let r of listaRegistros | paginate: {itemsPerPage: regPorPagina, currentPage: pagina}">
-            <th>
+            <th class="datos">
                 {{r.id}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.nombre}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.apellidos}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.correo}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.telefono}}
             </th>
-            <th>
+            <th class="datos" >
                 {{r.fotografia}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.fechaNacimiento}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.ciudadId}}
             </th>
-            <th>
+            <th class="datos">
                 {{r.direccion}}
             </th>
             <th>
