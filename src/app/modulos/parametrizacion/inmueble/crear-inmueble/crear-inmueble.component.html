@@ -4,8 +4,34 @@
             <div class="input-field col s12">
                 <input formControlName="identificador" id="identificador" type="text" class="validate">
                 <label for="identificador">Identificador</label>
+            </div>
+            <div class="input-field col s12">
                 <input formControlName="valor" id="valor" type="text" class="validate">
                 <label for="valor">Valor</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="paisId" (change)="cargarCiudadesPorPais()">
+                  <option *ngFor="let p of listaPaises" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Pais</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="ciudadId" (change)="cargarProyectosPorCiudad()">
+                  <option *ngFor="let p of listaCiudades" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Ciudad</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="proyectoId" (change)="cargarBloquesPorProyecto()">
+                  <option *ngFor="let p of listaProyectos" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Proyecto</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="bloqueId" >
+                  <option *ngFor="let p of listaBloques" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Bloque</label>
             </div>
         </div>
         <div class="row">

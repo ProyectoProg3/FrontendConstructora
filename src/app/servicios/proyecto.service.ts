@@ -26,13 +26,18 @@ export class ProyectoService {
     return this.http.get<ProyectoModelo>(`${this.url}/proyectos/${id}`);
   }
 
+  BuscarRegistroPorIdCiudad(ciudadId: number): Observable<ProyectoModelo[]> {
+    return this.http.get<ProyectoModelo[]>(`${this.url}/ciudads/${ciudadId}/proyectos`);
+  }
+
   AlmacenarRegistro(modelo: ProyectoModelo): Observable<ProyectoModelo> {
     return this.http.post<ProyectoModelo>(
       `${this.url}/proyectos`,
       {
         nombre: modelo.nombre,
         descripcion: modelo.descripcion,
-        imagen: modelo.imagen
+        imagen: modelo.imagen,
+        ciudadId: modelo.ciudadId
       },
       {
         headers: new HttpHeaders({

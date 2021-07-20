@@ -27,6 +27,8 @@ export class ClienteService {
     return this.http.get<ClienteModelo>(`${this.url}/clientes/${id}`);
   }
 
+
+
   AlmacenarRegistro(modelo: ClienteModelo): Observable<ClienteModelo> {
     return this.http.post<ClienteModelo>(
       `${this.url}/clientes`,

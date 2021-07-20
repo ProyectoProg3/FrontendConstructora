@@ -4,10 +4,26 @@
             <div class="input-field col s12">
                 <input formControlName="nombre" id="nombre" type="text" class="validate">
                 <label for="nombre">Nombre</label>
+            </div>
+            <div class="input-field col s12">
                 <input formControlName="imagen" id="imagen" type="text" class="validate">
                 <label for="imagen">Imagen</label>
+            </div>
+            <div class="input-field col s12">
                 <input formControlName="descripcion" id="descripcion" type="text" class="validate">
                 <label for="descripcion">Descripcion</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="paisId" (change)="cargarCiudadesPorPais()">
+                  <option *ngFor="let p of listaPaises" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Pais</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="ciudadId">
+                  <option *ngFor="let p of listaCiudades" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Ciudad</label>
             </div>
         </div>
         <div class="row">
@@ -17,7 +33,7 @@
                     <i class="material-icons right">save</i>
                 </button>
                 &nbsp;&nbsp;
-                <a class="waves-effect red waves-light btn" routerLink="/parametros/listar-proyectos"><i class="material-icons left">cancel</i>Cancelar</a>
+                <a class="waves-effect red waves-light btn" routerLink="/parametros/listar-bloques"><i class="material-icons left">cancel</i>Cancelar</a>
 
             </div>
         </div>

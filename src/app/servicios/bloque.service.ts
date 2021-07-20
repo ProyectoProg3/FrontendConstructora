@@ -26,12 +26,18 @@ export class BloqueService {
     return this.http.get<BloqueModelo>(`${this.url}/bloques/${id}`);
   }
 
+  BuscarRegistroPorIdProyecto(proyectoId: number): Observable<BloqueModelo []> {
+    return this.http.get<BloqueModelo []>(`${this.url}/proyectos/${proyectoId}/bloques`);
+  }
+  
+
   AlmacenarRegistro(modelo: BloqueModelo): Observable<BloqueModelo> {
     return this.http.post<BloqueModelo>(
       `${this.url}/bloques`,
       {
         nombre: modelo.nombre,
-        descripcion: modelo.descripcion
+        descripcion: modelo.descripcion,
+        proyectoId: modelo.proyectoId
       },
       {
         headers: new HttpHeaders({
