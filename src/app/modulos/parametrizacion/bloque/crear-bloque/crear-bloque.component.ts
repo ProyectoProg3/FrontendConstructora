@@ -38,9 +38,9 @@ export class CrearBloqueComponent implements OnInit {
     this.fgValidador = this.fb.group({
       nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
-      paisId: ['', []],
-      ciudadId: ['', []],
-      proyectoId: ['', []],
+      paisId: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
+      proyectoId: ['', [Validators.required]],
     });
   }
 
