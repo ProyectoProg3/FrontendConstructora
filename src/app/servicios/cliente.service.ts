@@ -33,14 +33,14 @@ export class ClienteService {
     return this.http.post<ClienteModelo>(
       `${this.url}/clientes`,
       {
-        nombre: modelo.nombre,
+        nombres: modelo.nombres,
         documento: modelo.documento,
         apellidos: modelo.apellidos,
         correo: modelo.correo,
-        telefono: modelo.telefono,
+        numCelular: modelo.numCelular,
         fotografia: modelo.fotografia,
         fechaNacimiento: modelo.fechaNacimiento,
-        ciudad: modelo.ciudadId,
+        ciudadId: modelo.ciudadId,
         direccion: modelo.direccion
       },
       {
@@ -54,14 +54,14 @@ export class ClienteService {
     return this.http.put<ClienteModelo>(
       `${this.url}/clientes/${modelo.id}`,
       {
-        nombre: modelo.nombre,
+        nombres: modelo.nombres,
         documento: modelo.documento,
         apellidos: modelo.apellidos,
         correo: modelo.correo,
-        telefono: modelo.telefono,
+        numCelular: modelo.numCelular,
         fotografia: modelo.fotografia,
         fechaNacimiento: modelo.fechaNacimiento,
-        ciudad: modelo.ciudadId,
+        ciudadId: modelo.ciudadId,
         direccion: modelo.direccion      },
       {
         headers: new HttpHeaders({

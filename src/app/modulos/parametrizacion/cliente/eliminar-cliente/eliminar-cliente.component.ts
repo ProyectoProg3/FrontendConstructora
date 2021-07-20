@@ -26,9 +26,9 @@ export class EliminarClienteComponent implements OnInit {
 
   ObtenerRegistroPorId(id: number) {
     this.servicio.BuscarRegistro(id).subscribe((datos) => {
-      if (datos.id && datos.nombre) {
+      if (datos.id && datos.nombres) {
         this.listaDatos.push(datos.id?.toString());
-        this.listaDatos.push(datos.nombre);
+        this.listaDatos.push(datos.nombres);
         this.id = datos.id;
       }
     },

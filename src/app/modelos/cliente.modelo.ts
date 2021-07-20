@@ -1,10 +1,10 @@
 export class ClienteModelo {
     id?: number;
     documento?: string;
-    nombre?: String;
+    nombres?: String;
     apellidos?: String;
     correo?: String;
-    telefono?: String;
+    numCelular?: String;
     fotografia?: String;
     fechaNacimiento?: String;
     ciudadId?: number;

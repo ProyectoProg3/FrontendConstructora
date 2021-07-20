@@ -22,14 +22,14 @@ export class CrearClienteComponent implements OnInit {
   ConstruirFormulario() {
     this.fgValidador = this.fb.group({
       id: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
+      nombres: ['', [Validators.required]],
       documento: ['', [Validators.required]],
       apellidos: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
+      numCelular: ['', [Validators.required]],
       fotografia: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
-      ciudad: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
     });
   }
@@ -43,28 +43,28 @@ export class CrearClienteComponent implements OnInit {
   }
 
   GuardarRegistro() {
-    let nom = this.ObtenerFgValidador.nombre.value;
+    let nom = this.ObtenerFgValidador.nombres.value;
     let id = this.ObtenerFgValidador.id.value;
     let ape = this.ObtenerFgValidador.apellidos.value;
     let correo = this.ObtenerFgValidador.correo.value;
-    let tel = this.ObtenerFgValidador.telefono.value;
+    let tel = this.ObtenerFgValidador.numCelular.value;
     let foto = this.ObtenerFgValidador.fotografia.value;
     let fnac = this.ObtenerFgValidador.fechaNacimiento.value;
-    let ciudad = this.ObtenerFgValidador.ciudad.value;
+    let ciudadId = this.ObtenerFgValidador.ciudadId.value;
     let dir = this.ObtenerFgValidador.direccion.value;
     let documento= this.ObtenerFgValidador.documento.value;
    
 
     let modelo: ClienteModelo = new ClienteModelo();
 
-    modelo.nombre = nom;
+    modelo.nombres = nom;
     modelo.id = id;
     modelo.apellidos = ape;
     modelo.correo = correo;    
-    modelo.telefono = tel;
+    modelo.numCelular = tel;
     modelo.fotografia = foto;
     modelo.fechaNacimiento = fnac;
-    modelo.ciudadId = parseInt(ciudad);
+    modelo.ciudadId = parseInt(ciudadId);
     modelo.direccion = dir;
     modelo.documento= documento;
 

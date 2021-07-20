@@ -23,13 +23,13 @@ export class EditarClienteComponent implements OnInit {
   ConstruirFormulario() {
     this.fgValidador = this.fb.group({
       id: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
+      nombres: ['', [Validators.required]],
       apellidos: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
+      numCelular: ['', [Validators.required]],
       fotografia: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
-      ciudad: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
     });
   }
@@ -42,7 +42,7 @@ export class EditarClienteComponent implements OnInit {
 
   ObtenerRegistroPorId(id: number) {
     this.servicio.BuscarRegistro(id).subscribe((datos) => {
-      this.ObtenerFgValidador.nombre.setValue(datos.nombre);
+      this.ObtenerFgValidador.nombres.setValue(datos.nombres);
       this.ObtenerFgValidador.apellidos.setValue(datos.apellidos);
       this.ObtenerFgValidador.fotografia.setValue(datos.fotografia);
       this.ObtenerFgValidador.id.setValue(datos.id);
@@ -57,26 +57,26 @@ export class EditarClienteComponent implements OnInit {
   }
 
   ModificarRegistro() {
-    let nom = this.ObtenerFgValidador.nombre.value;
+    let nom = this.ObtenerFgValidador.nombres.value;
     let id = this.ObtenerFgValidador.id.value;
     let ape = this.ObtenerFgValidador.apellidos.value;
     let correo = this.ObtenerFgValidador.correo.value;
-    let tel = this.ObtenerFgValidador.telefono.value;
+    let tel = this.ObtenerFgValidador.numCelular.value;
     let foto = this.ObtenerFgValidador.fotografia.value;
     let fnac = this.ObtenerFgValidador.fechaNacimiento.value;
-    let ciudad = this.ObtenerFgValidador.ciudad.value;
+    let ciudadId = this.ObtenerFgValidador.ciudadId.value;
     let dir = this.ObtenerFgValidador.direccion.value;
 
     let modelo: ClienteModelo = new ClienteModelo();
 
-    modelo.nombre = nom;
+    modelo.nombres = nom;
     modelo.id = id;
     modelo.apellidos = ape;
     modelo.correo = correo;    
-    modelo.telefono = tel;
+    modelo.numCelular = tel;
     modelo.fotografia = foto;
     modelo.fechaNacimiento = fnac;
-    modelo.ciudadId = ciudad;
+    modelo.ciudadId = ciudadId;
     modelo.direccion = dir;
     
     this.servicio.ModificarRegistro(modelo).subscribe(
