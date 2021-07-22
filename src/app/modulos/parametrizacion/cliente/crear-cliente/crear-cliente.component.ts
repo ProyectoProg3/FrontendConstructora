@@ -41,8 +41,8 @@ export class CrearClienteComponent implements OnInit {
       numCelular: ['', [Validators.required]],
       fotografia: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
-      paisId: ['', []],
-      ciudadId: ['', []],
+      paisId: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
     });
   }

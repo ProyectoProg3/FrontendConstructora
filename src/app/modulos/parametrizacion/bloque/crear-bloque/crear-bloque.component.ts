@@ -91,10 +91,11 @@ export class CrearBloqueComponent implements OnInit {
   }
 
   GuardarRegistro() {
+  
     let iden = this.ObtenerFgValidador.nombre.value;
     let desc = this.ObtenerFgValidador.descripcion.value;
     let proyecto = this.ObtenerFgValidador.proyectoId.value;
-    console.log(proyecto)
+
     let modelo: BloqueModelo = new BloqueModelo();
     modelo.nombre = iden;
     modelo.descripcion = desc;

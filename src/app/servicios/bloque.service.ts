@@ -51,7 +51,8 @@ export class BloqueService {
       `${this.url}/bloques/${modelo.id}`,
       {
         nombre: modelo.nombre,
-        descripcion: modelo.descripcion
+        descripcion: modelo.descripcion,
+        proyectoId: modelo.proyectoId
       },
       {
         headers: new HttpHeaders({

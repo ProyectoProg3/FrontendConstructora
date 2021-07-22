@@ -50,7 +50,8 @@ export class CiudadService {
     return this.http.put<CiudadModelo>(
       `${this.url}/ciudades/${modelo.id}`,
       {
-        nombre: modelo.nombre
+        nombre: modelo.nombre,
+        paisId: modelo.paisId
       },
       {
         headers: new HttpHeaders({

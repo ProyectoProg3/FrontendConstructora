@@ -40,7 +40,7 @@ const routes: Routes = [
     component: EditarPaisComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
-    path: 'eliminar-pais',
+    path: 'eliminar-pais/:id',
     component: EliminarPaisComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
@@ -56,7 +56,7 @@ const routes: Routes = [
     component: EditarCiudadComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
-    path: 'eliminar-ciudad',
+    path: 'eliminar-ciudad/:id',
     component: EliminarCiudadComponent,
     canActivate: [ValidadorSesionGuard]
   },{
@@ -72,7 +72,7 @@ const routes: Routes = [
     component: EditarBloqueComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
-    path: 'eliminar-bloque',
+    path: 'eliminar-bloque/:id',
     component: EliminarBloqueComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
@@ -88,7 +88,7 @@ const routes: Routes = [
     component: EditarInmuebleComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
-    path: 'eliminar-inmueble',
+    path: 'eliminar-inmueble/:id',
     component: EliminarInmuebleComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
@@ -104,7 +104,7 @@ const routes: Routes = [
     component: EditarProyectoComponent,
     canActivate: [ValidadorSesionGuard]
   }, {
-    path: 'eliminar-proyecto',
+    path: 'eliminar-proyecto/:id',
     component: EliminarProyectoComponent,
     canActivate: [ValidadorSesionGuard]
   },{
@@ -120,7 +120,7 @@ const routes: Routes = [
     component: EditarClienteComponent,
     canActivate: [ValidadorSesionGuard]
   },{
-    path: 'eliminar-cliente',
+    path: 'eliminar-cliente/:id',
     component: EliminarClienteComponent,
     canActivate: [ValidadorSesionGuard]
   }];

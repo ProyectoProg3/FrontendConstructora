@@ -42,10 +42,10 @@ export class CrearInmuebleComponent implements OnInit {
     this.fgValidador = this.fb.group({
       identificador: ['', [Validators.required]],
       valor: ['', [Validators.required]],
-      paisId: ['', []],
-      ciudadId: ['', []],
-      proyectoId: ['', []],
-      bloqueId: ['', []],
+      paisId: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
+      proyectoId: ['', [Validators.required]],
+      bloqueId: ['', [Validators.required]],
     });
   }
 

@@ -48,7 +48,8 @@ export class InmuebleService {
       `${this.url}/inmuebles/${modelo.id}`,
       {
         identificador: modelo.identificador,
-        valor: modelo.valor
+        valor: modelo.valor,
+        bloqueId: modelo.bloqueId
       },
       {
         headers: new HttpHeaders({

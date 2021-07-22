@@ -10,6 +10,24 @@
                 <input formControlName="descripcion" id="descripcion" type="text" class="validate">
                 <label class="active" for="descripcion">Descripcion</label>
             </div>
+            <div class="input-field col s12">
+                <select formControlName="paisId" (change)="cargarCiudadesPorPais()">
+                  <option *ngFor="let p of listaPaises" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Pais</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="ciudadId" (change)="cargarProyectosPorCiudad()">
+                  <option *ngFor="let p of listaCiudades" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Ciudad</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="proyectoId">
+                  <option *ngFor="let p of listaProyectos" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Proyecto</label>
+            </div>
         </div>
         <div class="row">
             <div class="col s12">

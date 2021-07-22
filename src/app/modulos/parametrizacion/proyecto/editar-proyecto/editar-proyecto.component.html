@@ -14,6 +14,18 @@
                 <input formControlName="imagen" id="imagen" type="text" class="validate">
                 <label class="active" for="imagen">Imagen</label>
             </div>
+            <div class="input-field col s12">
+                <select formControlName="paisId" (change)="cargarCiudadesPorPais()">
+                  <option *ngFor="let p of listaPaises" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Pais</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="ciudadId">
+                  <option *ngFor="let p of listaCiudades" value="{{p.id}}">{{p.nombre}}</option>
+                </select>
+                <label>Ciudad</label>
+            </div>
         </div>
         <div class="row">
             <div class="col s12">

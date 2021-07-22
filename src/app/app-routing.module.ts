@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'parametros',
     loadChildren: () => import('./modulos/parametrizacion/parametrizacion.module').then(m => m.ParametrizacionModule)
   },
+  {
+    path: 'ventas',
+    loadChildren: () => import('./modulos/ventas/ventas.module').then(m => m.VentasModule)
+  },
+  {
+    path: 'informes',
+    loadChildren: () => import('./modulos/informes/informes.module').then(m => m.InformesModule)
+  },
   
   { 
     path: '**', 

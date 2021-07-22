@@ -36,8 +36,8 @@ export class CrearProyectoComponent implements OnInit {
       nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       imagen: ['', [Validators.required]],
-      paisId: ['', []],
-      ciudadId: ['', []],
+      paisId: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
     });
   }
 

@@ -15,6 +15,9 @@
                 Descripcion
             </th>
             <th class="sub">
+                ID del proyecto
+            </th>
+            <th class="sub">
                 Acciones
             </th>
         </tr>
@@ -29,6 +32,9 @@
             </th>
             <th class="datos">
                 {{r.descripcion}}
+            </th>
+            <th class="datos">
+                {{r.proyectoId}}
             </th>
             <th class="datos">
                 <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-bloque/{{r.id}}"><i
