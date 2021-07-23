@@ -1,1 +1,81 @@
-<p>listar-info-financiera works!</p>
+<br />
+<a id="agregar" class="waves-effect waves-light btn" routerLink="/ventas/crear-info-financiera"><i
+        class="material-icons left">add</i>Agregar</a>
+
+<table class="table responsive-table">
+    <thead >
+        <tr class="tituloLista">
+            <th class="sub">
+                Id
+            </th>
+            <th class="sub">
+                Total de ingresos
+            </th>
+            <th class="sub">
+                Datos del trabajo
+            </th>
+            <th class="sub">
+                Tiempo en el trabajo actual
+            </th>
+            <th class="sub">
+                Nombre de la referencia familiar
+            </th>
+            <th class="sub"> 
+                Teléfono de la referencia familiar
+            </th>
+            <th class="sub">
+                Nombre de la referencia personal
+            </th >
+            <th class="sub">
+                Teléfono de la referencia personal
+            </th>
+            <th class="sub">
+                ID del cliente
+            </th>
+            <th class="sub">
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listaRegistros | paginate: {itemsPerPage: regPorPagina, currentPage: pagina}">
+            <th class="datos">
+                {{r.id}}
+            </th>
+            <th class="datos">
+                {{r.totalIngresos}}
+            </th>
+            <th class="datos">
+                {{r.datosTrabajo}}
+            </th>
+            <th class="datos">
+                {{r.TiempoTrabActual}}
+            </th>
+            <th class="datos">
+                {{r.nombreRefFamiliar}}
+            </th>
+            <th class="datos" >
+                {{r.telRefFamiliar}}
+            </th>
+            <th class="datos">
+                {{r.nombreRefPersonal}}
+            </th>
+            <th class="datos">
+                {{r.telRefPersonal}}
+            </th>
+
+            <th class="datos">
+                {{r.clienteId}}
+            </th>
+            <th class="datos">
+                <a class="waves-effect orange waves-light btn" routerLink="/ventas/editar-info-financiera/{{r.id}}"><i
+                        class="material-icons left">edit</i>Modificar</a>
+                &nbsp;&nbsp;
+                <a class="waves-effect red waves-light btn" routerLink="/ventas/eliminar-info-financiera/{{r.id}}"><i
+                        class="material-icons left">delete</i>Eliminar</a>
+            </th>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="CambioPagina($event)" previousLabel="Anterior" nextLabel="Siguiente">
+</pagination-controls>

@@ -17,6 +17,10 @@ import { CrearRegistroPagoComponent } from './registro-pago/crear-registro-pago/
 import { EditarRegistroPagoComponent } from './registro-pago/editar-registro-pago/editar-registro-pago.component';
 import { EliminarRegistroPagoComponent } from './registro-pago/eliminar-registro-pago/eliminar-registro-pago.component';
 import { ListarRegistroPagoComponent } from './registro-pago/listar-registro-pago/listar-registro-pago.component';
+import { InicioVentasComponent } from './inicio-ventas/inicio-ventas.component';
+import { EliminarInfoFinancieraComponent } from './info-financiera/eliminar-info-financiera/eliminar-info-financiera.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -38,11 +42,16 @@ import { ListarRegistroPagoComponent } from './registro-pago/listar-registro-pag
         CrearRegistroPagoComponent,
         EditarRegistroPagoComponent,
         EliminarRegistroPagoComponent,
-        ListarRegistroPagoComponent
+        ListarRegistroPagoComponent,
+        InicioVentasComponent,
+        EliminarInfoFinancieraComponent
   ],
   imports: [
     CommonModule,
-    VentasRoutingModule
+    VentasRoutingModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class VentasModule { }

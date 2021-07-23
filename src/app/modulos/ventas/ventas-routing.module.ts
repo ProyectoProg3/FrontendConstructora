@@ -1,7 +1,61 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
+import { CrearInfoFinancieraComponent } from './info-financiera/crear-info-financiera/crear-info-financiera.component';
+import { EditarInfoFinancieraComponent } from './info-financiera/editar-info-financiera/editar-info-financiera.component';
+import { EliminarInfoFinancieraComponent } from './info-financiera/eliminar-info-financiera/eliminar-info-financiera.component';
+import { ListarInfoFinancieraComponent } from './info-financiera/listar-info-financiera/listar-info-financiera.component';
+import { CrearInfoPersonalComponent } from './info-personal/crear-info-personal/crear-info-personal.component';
+import { EditarInfoPersonalComponent } from './info-personal/editar-info-personal/editar-info-personal.component';
+import { EliminarInfoPersonalComponent } from './info-personal/eliminar-info-personal/eliminar-info-personal.component';
+import { ListarInfoPersonalComponent } from './info-personal/listar-info-personal/listar-info-personal.component';
+import { InicioVentasComponent } from './inicio-ventas/inicio-ventas.component';
 
-const routes: Routes = [];
+
+const routes: Routes = [
+  {
+  path: 'inicio-ventas',
+  component: InicioVentasComponent,
+  canActivate: [ValidadorSesionGuard]
+  } ,
+  {
+    path: 'listar-info-financiera',
+    component: ListarInfoFinancieraComponent,
+    canActivate: [ValidadorSesionGuard]
+  },
+  {
+    path: 'crear-info-financiera',
+    component: CrearInfoFinancieraComponent,
+    canActivate: [ValidadorSesionGuard]
+  }, {
+    path: 'editar-info-financiera/:id',
+    component: EditarInfoFinancieraComponent,
+    canActivate: [ValidadorSesionGuard]
+  },
+  {
+    path: 'eliminar-info-financiera/:id',
+    component: EliminarInfoFinancieraComponent,
+    canActivate: [ValidadorSesionGuard]
+  },
+  {
+    path: 'listar-info-personal',
+    component: ListarInfoPersonalComponent,
+    canActivate: [ValidadorSesionGuard]
+  },
+  {
+    path: 'crear-info-personal',
+    component: CrearInfoPersonalComponent,
+    canActivate: [ValidadorSesionGuard]
+  }, {
+    path: 'editar-info-personal/:id',
+    component: EditarInfoPersonalComponent,
+    canActivate: [ValidadorSesionGuard]
+  },
+  {
+    path: 'eliminar-info-personal/:id',
+    component: EliminarInfoPersonalComponent,
+    canActivate: [ValidadorSesionGuard]
+  }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

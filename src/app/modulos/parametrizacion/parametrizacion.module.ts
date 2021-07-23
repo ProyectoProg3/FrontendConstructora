@@ -30,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InicioParametrizacionComponent } from './inicio-parametrizacion/inicio-parametrizacion.component';
 
+
 @NgModule({
   declarations: [
     ListarCiudadComponent,
@@ -56,7 +57,8 @@ import { InicioParametrizacionComponent } from './inicio-parametrizacion/inicio-
     CrearClienteComponent,
     EditarClienteComponent,
     EliminarClienteComponent,
-    InicioParametrizacionComponent
+    InicioParametrizacionComponent,
+
   ],
   imports: [
     CommonModule,

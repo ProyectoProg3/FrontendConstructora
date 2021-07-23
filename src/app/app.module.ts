@@ -10,7 +10,6 @@ import { InicioComponent } from './publico/inicio/inicio.component';
 import { Error404Component } from './publico/errores/error404/error404.component';
 import { HttpClientModule} from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +18,7 @@ import { HttpClientModule} from '@angular/common/http';
     PieDePaginaComponent,
     InicioComponent,
     Error404Component,
+
 
 
   ],
