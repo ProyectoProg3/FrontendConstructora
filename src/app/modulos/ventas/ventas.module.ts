@@ -6,10 +6,6 @@ import { CrearSolicitudComponent } from './solicitud-estudio/crear-solicitud/cre
 import { EditarSolicitudComponent } from './solicitud-estudio/editar-solicitud/editar-solicitud.component';
 import { EliminarSolicitudComponent } from './solicitud-estudio/eliminar-solicitud/eliminar-solicitud.component';
 import { ListarSolicitudComponent } from './solicitud-estudio/listar-solicitud/listar-solicitud.component';
-import { CrearInfoPersonalComponent } from './info-personal/crear-info-personal/crear-info-personal.component';
-import { EditarInfoPersonalComponent } from './info-personal/editar-info-personal/editar-info-personal.component';
-import { EliminarInfoPersonalComponent } from './info-personal/eliminar-info-personal/eliminar-info-personal.component';
-import { ListarInfoPersonalComponent } from './info-personal/listar-info-personal/listar-info-personal.component';
 import { CrearInfoFinancieraComponent } from './info-financiera/crear-info-financiera/crear-info-financiera.component';
 import { EditarInfoFinancieraComponent } from './info-financiera/editar-info-financiera/editar-info-financiera.component';
 import { ListarInfoFinancieraComponent } from './info-financiera/listar-info-financiera/listar-info-financiera.component';
@@ -32,10 +28,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         EditarSolicitudComponent,
         EliminarSolicitudComponent,
         ListarSolicitudComponent,
-        CrearInfoPersonalComponent,
-        EditarInfoPersonalComponent,
-        EliminarInfoPersonalComponent,
-        ListarInfoPersonalComponent,
         CrearInfoFinancieraComponent,
         EditarInfoFinancieraComponent,
         ListarInfoFinancieraComponent,
