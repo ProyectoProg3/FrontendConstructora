@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DatosGenerales } from '../config/datos.generales';
+import { ImagenModelo } from '../modelos/imagen.modelo';
 import { ProyectoModelo } from '../modelos/proyecto.modelo';
 import { SeguridadService } from './seguridad.service';
 
@@ -46,6 +47,17 @@ export class ProyectoService {
       });
   }
 
+  CargarArchivo(formData: FormData): Observable<ImagenModelo> {
+    return this.http.post<ImagenModelo>(
+      `${this.url}/CargarImagenProyecto`,
+        formData,
+      {
+        headers: new HttpHeaders({
+          "Authorization": `Bearer ${this.token}`
+        })
+      });
+  }
+
 
   ModificarRegistro(modelo: ProyectoModelo): Observable<ProyectoModelo> {
     return this.http.put<ProyectoModelo>(
@@ -53,7 +65,9 @@ export class ProyectoService {
       {
         nombre: modelo.nombre,
         descripcion: modelo.descripcion,
-        imagen: modelo.imagen      },
+        imagen: modelo.imagen,
+        ciudadId: modelo.ciudadId  
+      },
       {
         headers: new HttpHeaders({
           "Authorization": `Bearer ${this.token}`

@@ -6,13 +6,9 @@
                 <label for="nombre">Nombre</label>
             </div>
             <div class="input-field col s12">
-                <input formControlName="imagen" id="imagen" type="text" class="validate">
-                <label for="imagen">Imagen</label>
-            </div>
-            <div class="input-field col s12">
-                <input formControlName="descripcion" id="descripcion" type="text" class="validate">
+                <textarea formControlName="descripcion" id="descripcion" class="validate" data-length="300"></textarea>
                 <label for="descripcion">Descripcion</label>
-            </div>
+              </div>
             <div class="input-field col s12">
                 <select formControlName="paisId" (change)="cargarCiudadesPorPais()">
                   <option *ngFor="let p of listaPaises" value="{{p.id}}">{{p.nombre}}</option>
@@ -24,6 +20,26 @@
                   <option *ngFor="let p of listaCiudades" value="{{p.id}}">{{p.nombre}}</option>
                 </select>
                 <label>Ciudad</label>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="file-field input-field col s6">
+                <div class="btn">
+                  <span>Seleccionar imagen</span>
+                  <input formControlName="imagen" (change)="CuandoSeleccionanArchivo($event)" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <div class="col s3">
+                <input type="button" class="btn" value="Cargar Imagen" (click)="CargarImagenAlServidor()">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <strong></strong>
             </div>
         </div>
         <div class="row">

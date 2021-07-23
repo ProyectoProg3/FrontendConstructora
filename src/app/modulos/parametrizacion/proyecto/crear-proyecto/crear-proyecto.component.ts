@@ -20,6 +20,8 @@ declare var iniciarSelect: any;
 export class CrearProyectoComponent implements OnInit {
   listaPaises: PaisModelo[] = []
   listaCiudades: CiudadModelo[] = []
+  nombreImagenTemp: String = "Sin imagen";
+
   fgValidador: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder,
@@ -27,7 +29,8 @@ export class CrearProyectoComponent implements OnInit {
     private servicio: ProyectoService,
     private router: Router,
     private servicioPaises: PaisService,
-    private servicioCiudades: CiudadService) {
+    private servicioCiudades: CiudadService,
+    private servicioProyectos: ProyectoService) {
 
   }
 
@@ -35,7 +38,8 @@ export class CrearProyectoComponent implements OnInit {
     this.fgValidador = this.fb.group({
       nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
-      imagen: ['', [Validators.required]],
+      imagen: ['', []],
+      nombreImagen: ['', [Validators.required]],
       paisId: ['', [Validators.required]],
       ciudadId: ['', [Validators.required]],
     });
@@ -73,10 +77,11 @@ export class CrearProyectoComponent implements OnInit {
     return this.fgValidador.controls;
   }
 
+ 
   GuardarRegistro() {
     let iden = this.ObtenerFgValidador.nombre.value;
     let desc = this.ObtenerFgValidador.descripcion.value;
-    let img = this.ObtenerFgValidador.imagen.value;
+    let img = this.ObtenerFgValidador.nombreImagen.value;
     let ciudad = this.ObtenerFgValidador.ciudadId.value;
     let modelo: ProyectoModelo = new ProyectoModelo();
     console.log(modelo)
@@ -95,5 +100,29 @@ export class CrearProyectoComponent implements OnInit {
       }
     );
   }
+
+  CuandoSeleccionanArchivo(event: any){
+    if (event.target.files.length > 0){
+      let archivo= event.target.files[0];
+      this.fgValidador.controls.imagen.setValue(archivo);
+    }else{
+      console.log("Se ha cancelado la selección de arhivo")
+    }
+  }
+
+  CargarImagenAlServidor(){
+    let formData= new FormData();
+    formData.append('file', this.fgValidador.controls.imagen.value)
+    this.servicioProyectos.CargarArchivo(formData).subscribe(
+      (datos) => {
+        console.log(datos.filename);
+        this.fgValidador.controls.nombreImagen.setValue(datos.filename);
+      },
+      (error) => {
+        alert("Se ha producido un error al cargar el archivo.")
+      }
+    );
+  }
+
 
 }

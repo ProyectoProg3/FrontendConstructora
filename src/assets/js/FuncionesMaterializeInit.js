@@ -7,3 +7,8 @@ function iniciarSelect(){
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
 }
+
+function iniciarCollapsible(){
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+}

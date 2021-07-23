@@ -3,12 +3,7 @@
     <a id="titulo" routerLink="/" class="brand-logo">UdeC S.A.S</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li *ngIf="isLoggedIn"><a href="parametros/listar-paises">Pais</a></li>
-      <li *ngIf="isLoggedIn"><a href="parametros/listar-ciudades">Ciudad</a></li>
-      <li *ngIf="isLoggedIn"><a href="parametros/listar-bloques">Bloque</a></li>
-      <li *ngIf="isLoggedIn"><a href="parametros/listar-inmuebles">Inmueble</a></li>
-      <li *ngIf="isLoggedIn"><a href="parametros/listar-proyectos">Proyecto</a></li>
-      <li *ngIf="isLoggedIn"><a href="parametros/listar-clientes">Cliente</a></li>
+      <li *ngIf="isLoggedIn"><a href="parametros/inicio-parametrizacion">Parámetros</a></li>
       <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
       <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
     </ul>
@@ -17,12 +12,8 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li *ngIf="isLoggedIn"><a href="parametros/listar-paises">Pais</a></li>
-  <li *ngIf="isLoggedIn"><a href="parametros/listar-ciudades">Ciudad</a></li>
-  <li *ngIf="isLoggedIn"><a href="parametros/listar-bloques">Bloque</a></li>
-  <li *ngIf="isLoggedIn"><a href="parametros/listar-inmuebles">Inmueble</a></li>
-  <li *ngIf="isLoggedIn"><a href="parametros/listar-proyectos">Proyecto</a></li>
-  <li *ngIf="isLoggedIn"><a href="parametros/listar-clientes">Cliente</a></li>
+  <li *ngIf="isLoggedIn"><a href="parametros/inicio-parametrizacion">Parámetros</a></li>
+
   <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
   <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
 </ul>

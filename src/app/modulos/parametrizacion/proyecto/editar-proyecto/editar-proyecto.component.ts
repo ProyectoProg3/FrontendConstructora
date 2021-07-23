@@ -110,5 +110,6 @@ export class EditarProyectoComponent implements OnInit {
       }
     );
   }
+  
 
 }
