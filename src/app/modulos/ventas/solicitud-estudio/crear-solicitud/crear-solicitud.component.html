@@ -1,1 +1,37 @@
-<p>crear-solicitud works!</p>
+<div class="row">
+    <form class="col s12"  [formGroup]="fgValidador" (ngSubmit)="GuardarRegistro()" >
+        <div class="row">
+            <div class="input-field col s12">
+                <select formControlName="clienteId">
+                  <option *ngFor="let p of listaClientes" value="{{p.id}}">{{p.nombres}} {{p.apellidos}}</option>
+                </select>
+                <label>Cliente</label>
+            </div>
+            <div class="input-field col s12">
+                <select formControlName="inmuebleId">
+                  <option *ngFor="let p of listaInmuebles" value="{{p.id}}">{{p.identificador}} — ${{p.valor}}</option>
+                </select>
+                <label>Inmueble</label>
+            </div>
+            <div class="input-field col s12">
+                <input formControlName="fechaSolicitud" id="fechaSolicitud" type="text" class="validate">
+                <label class="active" for="fechaSolicitud">Fecha de solicitud (AAAA-MM-DD)</label>
+            </div>
+            <div class="input-field col s12">
+                <input formControlName="oferta" id="oferta" type="text" class="validate">
+                <label class="active" for="oferta">Oferta</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+
+                <button [disabled]="ObtenerFgValidador.oferta.errors" class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                    <i class="material-icons right">save</i>
+                </button>
+                &nbsp;&nbsp;
+                <a class="waves-effect red waves-light btn" routerLink="/ventas/listar-solicitud"><i class="material-icons left">cancel</i>Cancelar</a>
+
+            </div>
+        </div>
+    </form>
+</div>
